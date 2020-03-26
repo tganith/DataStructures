@@ -4,122 +4,191 @@ public class LinkedList {
 
     Node head;
 
-    public static void main(String args[]) throws Exception{
 
-        LinkedList list = new LinkedList();
-        list.insert(20);
-        list.insert(30);
-        list.insert(40);
+    public void insert(int data){
 
-        list.insertAtFirst(10);
+        Node newNode = new Node(data);
 
-        list.insert(50);
-        list.insert(60);
+        if(head == null){
+            head = newNode;
+        } else {
+            Node tempHead = head;
 
-        list.insertAt(3,35);
+            while(tempHead.next != null){
+                tempHead = tempHead.next;
+            }
+            tempHead.next = newNode;
 
-      //  list.deleteAt(5);
-
-        list.display();
-
-         //  list.deleteList();
-        //  list.display();
-
-        int value = list.get(2);
-        System.out.println("index value of 2 is "+value);
-    }
-
-    private int get(int index) throws Exception {
-
-        if(index < 0){
-            throw new Exception("index value is not valid");
         }
 
-        if(index == 0){
-            return head.value;
-        }
-
-        Node n = head;
-
-        for(int i =0;i<index;i++){
-            n= n.next;
-        }
-        return n.value;
 
     }
 
-    private void deleteList() {
+    public void display() {
+
+         if(head == null){
+             return;
+         }
+
+         Node temp = head;
+         while(temp.next != null){
+             System.out.println(temp.data);
+             temp = temp.next;
+         }
+         System.out.println(temp.data);
+
+    }
+
+    public void insertAtFirst(int data) {
+
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+
+    }
+
+    public void insertAtIndex(int index, int data) {
+
+        Node newNode = new Node(data);
+
+        if(head == null){
+            head = newNode;
+        } else{
+            if(index == 0){
+                newNode.next = head;
+                head = newNode;
+            } else {
+
+                Node  temp = head;
+
+                int count = 1;
+
+                while(temp.next !=null){
+                    if(count == index) {
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        return;
+                    } else {
+                        count++;
+                        temp = temp.next;
+                    }
+
+                }
+
+
+            }
+        }
+
+    }
+
+    public int get(int index) throws Exception {
+
+        if(head == null){
+            throw new Exception("LinkedList is empty");
+        }
+
+        if(index == 0) {
+            return head.data;
+        } else {
+            int count = 1;
+            Node temp = head;
+
+            int output = 0;
+            while(temp.next!=null){
+                temp = temp.next;
+                if(count == index){
+                    output = temp.data;
+                    break;
+                }
+                count++;
+            }
+            return output;
+        }
+    }
+
+    public void deleteList() {
         head = null;
     }
 
-    private void deleteAt(int index) {
-
-        if(index ==0){
-            head = head.next;
+    public void deleteNodeAt(int index) {
+        if(head == null){
             return;
         }
-
-        Node n = head;
-        for(int i =0;i<index-1;i++){
-            n = n.next;
-        }
-        Node deleteNode = n.next;
-        n.next = deleteNode.next;
-
-        // for cleaning up for garbage collection
-        deleteNode = null;
-
-    }
-
-    private void insertAt(int index, int value) {
-        Node node  = new Node(value);
 
         if(index == 0){
-            insertAtFirst(value);
-            return;
-        }
-
-        Node n = head;
-
-        for(int i =0;i<index-1;i++){
-            n = n.next;
-        }
-        node.next =n.next;
-        n.next = node;
-    }
-
-    private void insertAtFirst(int data) {
-        Node node = new Node(data);
-        node.next = head;
-        head = node;
-    }
-
-    private void display(){
-
-        if(head == null){
-            System.out.println("LinkedList is empty");
-            return;
-        }
-
-        Node n = head;
-        while(n.next!=null){
-            System.out.println(n.value);
-            n = n.next;
-        }
-        System.out.println(n.value);
-    }
-
-    private void insert(int value) {
-
-        Node node = new Node(value);
-        if(head == null){
-            head = node;
+            head = head.next;
         } else {
-            Node n =  head;
-            while(n.next!=null) {
-                n = n.next;
+            int count = 1;
+            Node temp = head;
+            while(temp.next != null){
+                if(count == index) {
+                    temp.next =temp.next.next;
+                    break;
+                }
+                temp = temp.next;
+                count++;
             }
-            n.next = new Node(value);
+        }
+    }
+
+    public void deleteNodeLast() {
+
+        if(head == null){
+            return;
+        } else {
+
+            Node temp = head;
+
+            if(temp.next==null){
+                head = null;
+                return;
+            }
+
+            while(temp.next.next!=null){
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+
+    }
+
+    public void search(int data) {
+
+        if(head == null){
+            return;
+        }
+
+        Node temp = head;
+        boolean  b = false;
+        while(temp.next!=null){
+
+            if(temp.data == data){
+               b = true;
+               break;
+            }
+            temp = temp.next;
+        }
+
+
+        if(temp.data == data || b){
+            System.out.println("data is found in list");
+        } else {
+            System.out.println("data not found in list");
+        }
+
+    }
+
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data){
+            this.data = data;
         }
     }
 

@@ -1,4 +1,4 @@
-package com.myproject.datastructures.stacks;
+package com.myproject.datastructures.stacks.arrays;
 
 public class StacksArrays {
 

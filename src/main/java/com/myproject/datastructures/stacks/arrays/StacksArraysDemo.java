@@ -1,4 +1,6 @@
-package com.myproject.datastructures.stacks;
+package com.myproject.datastructures.stacks.arrays;
+
+import com.myproject.datastructures.stacks.arrays.StacksArrays;
 
 public class StacksArraysDemo {
 
@@ -8,7 +10,7 @@ public class StacksArraysDemo {
         stacks.push(200);
         stacks.push(300);
 
-     //   stacks.pop();
+        stacks.pop();
 
         System.out.println("top element:"+stacks.topElement());
 
