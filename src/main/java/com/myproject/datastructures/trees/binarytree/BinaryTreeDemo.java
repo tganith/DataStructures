@@ -2,57 +2,55 @@ package com.myproject.datastructures.trees.binarytree;
 
 public class BinaryTreeDemo {
 
-    public static void main(String args[]) {
-        BinarytTree bianryTree = new BinarytTree();
-        bianryTree.insert(40);
-        bianryTree.insert(20);
-        bianryTree.insert(60);
-        bianryTree.insert(10);
-        bianryTree.insert(30);
-        bianryTree.insert(50);
-        bianryTree.insert(70);
+    public static void main(String args[]){
 
-      /*  System.out.println("In Order Traversal :");
-        bianryTree.inOrderTraversal();
-        System.out.println();
+        BinaryTree bt = new BinaryTree();
+        bt.insert(30);
+        bt.insert(20);
+        bt.insert(40);
+        bt.insert(70);
+        bt.insert(10);
+        bt.insert(90);
+        bt.insert(25);
 
-        System.out.println("Pre Order Traversal :");
-        bianryTree.preOrderTraversal();
-        System.out.println();
+       /* System.out.println("In Order Traversal:");
+        bt.inOrderTraversal();
+        System.out.println("\n---------------------------------------------------");
 
-        System.out.println("Post Order Traversal :");
-        bianryTree.postOrderTraversal();
-        System.out.println();
+        System.out.println("Pre Order Traversal:");
+        bt.preOrderTraversal();
+        System.out.println("\n---------------------------------------------------");
+
+        System.out.println("Post Order Traversal:");
+        bt.postOrderTraversal();
+        System.out.println("\n---------------------------------------------------");
 
         System.out.println("Level Order Traversal:");
-        bianryTree.levelOrderTraversal();
-        System.out.println();
+        bt.levelOrderTraversal();
+        System.out.println("\n---------------------------------------------------");
 
-        System.out.println("------------------------------------");*/
+        System.out.println("Search Element:");
+        bt.search(125);
+        System.out.println("\n---------------------------------------------------");
 
+        System.out.println("Count of Nodes:"+bt.countOfNodes());
+        System.out.println("\n---------------------------------------------------");*/
 
-       /* System.out.print("Search: ");
-        bianryTree.search(20);
-
-        System.out.println("------------------------------------");
-
-        System.out.println("Count of Nodes: "+bianryTree.countOfNodes());*/
-
-        System.out.println("------------------------------------");
+        System.out.println("Level Order Traversal:");
+        bt.levelOrderTraversal();
+        System.out.println("\n---------------------------------------------------");
 
         System.out.println("Deepest Node:");
-        bianryTree.getDeepestNode();
-
-        System.out.println("------------------------------------");
+        bt.deepestNode();
+        System.out.println("\n---------------------------------------------------");
 
         System.out.println("Delete Node:");
-        bianryTree.delete(70);
+        bt.deleteNode(40);
+        System.out.println("\n---------------------------------------------------");
 
-        System.out.println("------------------------------------");
-
-        System.out.println("In Order Traversal :");
-        bianryTree.inOrderTraversal();
-        System.out.println();
+        System.out.println("Level Order Traversal:");
+        bt.levelOrderTraversal();
+        System.out.println("\n---------------------------------------------------");
 
     }
 }

@@ -13,18 +13,33 @@ public class DoublyLinkedListDemo {
 
         list.display();
 
-        System.out.println("----------------------------");
+        System.out.println("\n----------------------------");
 
      /*   list.insertAtFirst(50);
 
         list.display();*/
-        list.deleteAtIndex(4);
+  /*      list.deleteAtIndex(4);
         list.deleteAtIndex(3);
         list.deleteAtIndex(2);
         list.deleteAtIndex(1);
-     //   list.deleteAtIndex(0);
+     //   list.deleteAtIndex(0);*/
    //     list.deleteAtIndex(4);
+
+     //   list.delete();
         list.display();
+
+        System.out.println("\n----------------------------");
+
+
+        list.backwardDisplay();
+
+        System.out.println("\n----------------------------");
+
+        list.search(100);
+
+        System.out.println("\n----------------------------");
+
+        System.out.println("\n get elment:"+list.get(4));
     }
 
 

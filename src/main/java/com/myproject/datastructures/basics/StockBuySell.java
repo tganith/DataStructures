@@ -1,6 +1,6 @@
 package com.myproject.datastructures.basics;
 
-public class CalculateMaxDiff {
+public class StockBuySell {
 
     // 5,6,8,1,2,7
     public static void main(String args[]) {

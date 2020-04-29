@@ -9,8 +9,11 @@ public class StacksArraysDemo {
         stacks.push(100);
         stacks.push(200);
         stacks.push(300);
+        stacks.push(300);
+        stacks.push(300);
+        stacks.push(300);
 
-        stacks.pop();
+     //   stacks.pop();
 
         System.out.println("top element:"+stacks.topElement());
 

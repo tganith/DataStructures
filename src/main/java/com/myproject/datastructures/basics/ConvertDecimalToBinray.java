@@ -6,12 +6,12 @@ public class ConvertDecimalToBinray {
     public static void main(String args[]){
 
         // Method1
-        int n = 13;
+        int n = 5;
         String binaryString = Integer.toBinaryString(n);
         System.out.println(binaryString);
 
         // Method2
-        int x = 13;
+        int x = 5;
         String reverse = "";
         while(x !=0 ){
             int d = x % 2;

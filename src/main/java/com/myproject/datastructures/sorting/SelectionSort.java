@@ -1,10 +1,14 @@
 package com.myproject.datastructures.sorting;
 
+import java.util.stream.Stream;
+
 public class SelectionSort {
 
     public static void main(String args[]) {
+
         int[] arr= {10,40,20,60,80,30,0};
         int n = arr.length;
+
         int min;
         int temp;
         for(int i=0;i<n-1;i++){
@@ -22,7 +26,6 @@ public class SelectionSort {
         for(int obj: arr){
              System.out.print(obj+" ");
         }
-
 
     }
 }

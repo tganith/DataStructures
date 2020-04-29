@@ -4,9 +4,14 @@ public class MinMaxNo {
 
     public static void main(String args[]) {
         int[] arr = {1, 20, 50, 90,20,50,10};
-
+/*
         int min = Integer.MAX_VALUE;
-        int max = 0;
+        int max = Integer.MIN_VALUE;*/
+
+
+        int min = arr[0];
+        int max = arr[0];
+
         int n = arr.length;
 
         for(int i=0;i<n;i++) {
@@ -18,7 +23,7 @@ public class MinMaxNo {
             }
         }
 
-        System.out.println("minimum number is "+min);
+        System.out.println("min number is "+min);
         System.out.println("max number is "+max);
 
     }

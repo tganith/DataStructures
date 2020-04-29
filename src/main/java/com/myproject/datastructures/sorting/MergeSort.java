@@ -1,69 +1,67 @@
 package com.myproject.datastructures.sorting;
 
-import java.util.Arrays;
-
 public class MergeSort {
-
-    static int[] temp = new int[5];
-    static int[] result = new int[5];
 
     public static void main(String args[]) {
 
-        int[] arr = {5,4,3,2,1};
+          int[] arr = {5,4};
 
-        mergeSort(arr,0,arr.length-1);
+          mergeSort(arr,arr.length);
 
-
-        System.out.println(Arrays.toString(result));
-
-    }
-
-    private static void mergeSort(int[] arr, int lb, int ub) {
-
-        if(lb<ub){
-           int mid = (lb+ub)/2;
-           mergeSort(arr,0,mid);
-           mergeSort(arr,mid+1,ub);
-           merge(arr,lb,mid,ub);
-        }
+          for(int i = 0;i<arr.length;i++){
+              System.out.print(arr[i]+" ");
+          }
 
     }
 
-    private static void merge(int[] arr, int lb, int mid, int ub) {
+    private static void mergeSort(int[] arr,int length) {
 
-        int i = lb;
-        int j = mid+1;
-        int k = lb;
-
-        while(i<=mid && j <= ub){
-             if(arr[i]<=arr[j]){
-                 temp[k] = arr[i];
-                 i++;
-             } else {
-                 temp[k] = arr[j];
-                 j++;
-             }
-             k++;
+        if(length < 2){
+            return;
         }
 
-        if(i>mid){
-                while(j<=ub){
-                   temp[k] = arr[j];
-                   j++;
-                   k++;
-                }
-        } else {
-            while(i<=mid){
-                 temp[k] = arr[i];
-                 i++;
-                 k++;
+        int mid = length/2;
+
+        int[] left = new int[mid];
+        int[]  right = new int[length - mid];
+
+        int k = 0 ;
+        for(int i = 0;i<length;i++){
+            if(i<mid){
+                left[i] = arr[i];
+            } else {
+                right[k++] = arr[i];
             }
         }
 
-        for(int m = lb;m<=ub;m++){
-            result[m] = temp[m];
+        mergeSort(left,mid);
+        mergeSort(right,length-mid);
+        merge(left,right,arr,mid,length-mid);
+
+    }
+
+    private static void merge(int[] left, int[] right, int[] arr, int left_size, int right_size) {
+
+
+        int i = 0;
+        int l = 0;
+        int r = 0;
+
+        while(l<left_size && r <right_size){
+            if(left[l]<right[r]){
+               arr[i++] = left[l++];
+            } else {
+               arr[i++] = right[r++];
+            }
         }
 
+        while(l<left_size){
+            arr[i++] = left[l++];
+        }
+
+        while(r<right_size){
+            arr[i++] = right[r++];
+        }
 
     }
 

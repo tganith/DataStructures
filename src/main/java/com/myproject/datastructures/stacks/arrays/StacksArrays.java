@@ -10,8 +10,9 @@ public class StacksArrays {
     }
 
     public void push(int obj) {
-       if(stacks.length-1 < top){
+       if(stacks.length-1 <= top){
            System.out.println("stack is full");
+           return;
        }
 
        stacks[++top] = obj;

@@ -1,10 +1,15 @@
 package com.myproject.datastructures.sorting;
 
+import java.util.Arrays;
+
 public class InsertionSort {
+
+    // Time Complexity - O(n2)
 
     public static void main(String args[]) {
         int[] arr= {10,400,20,60,80,70,130};
         int n = arr.length;
+
         int temp;
         int j;
         for(int i=1;i<n;i++){
@@ -17,10 +22,7 @@ public class InsertionSort {
             arr[j+1] = temp;
         }
 
-        for(int obj: arr){
-             System.out.print(obj+" ");
-        }
-
+        System.out.println(Arrays.toString(arr));
 
     }
 }

@@ -19,12 +19,12 @@ public class LinkedListDemo {
 
 
 
-     /*  int value =  list.get(3);
-       System.out.println("get value:"+value);*/
+       int value =  list.get(3);
+       System.out.println("get value:"+value);
 
      //  list.deleteList();
 
-       // list.deleteNodeAt(1);
+        list.deleteNodeAt(4);
 
       //  list.deleteNodeLast();
 

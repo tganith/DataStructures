@@ -91,22 +91,18 @@ public class LinkedList {
             throw new Exception("LinkedList is empty");
         }
 
-        if(index == 0) {
-            return head.data;
-        } else {
-            int count = 1;
-            Node temp = head;
+        Node temp = head;
+        for(int i =0 ;i<index;i++){
+               if(temp!=null) {
+                   temp = temp.next;
+               }
 
-            int output = 0;
-            while(temp.next!=null){
-                temp = temp.next;
-                if(count == index){
-                    output = temp.data;
-                    break;
-                }
-                count++;
-            }
-            return output;
+        }
+
+        if(temp !=null ){
+            return temp.data;
+        } {
+            throw new Exception("Not Found Element");
         }
     }
 
@@ -121,17 +117,18 @@ public class LinkedList {
 
         if(index == 0){
             head = head.next;
+            return;
+        }
+
+        Node temp = head;
+        for(int i = 0;i<index-1;i++){
+            temp = temp.next;
+        }
+
+        if(temp.next!=null){
+            temp.next = temp.next.next;
         } else {
-            int count = 1;
-            Node temp = head;
-            while(temp.next != null){
-                if(count == index) {
-                    temp.next =temp.next.next;
-                    break;
-                }
-                temp = temp.next;
-                count++;
-            }
+            temp.next = null;
         }
     }
 

@@ -1,5 +1,9 @@
 package com.myproject.datastructures.arrays;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 public class SecondSmallest {
 
     public static void main (String[] args) {
@@ -23,6 +27,9 @@ public class SecondSmallest {
         System.out.println("smallest value is "+smallest);
         System.out.println("second smallest value is "+secondSmallest);
 
+
+        Map<Integer,String> map = new HashMap<>();
+        map.put(10,"ganihta");
     }
 
 }
