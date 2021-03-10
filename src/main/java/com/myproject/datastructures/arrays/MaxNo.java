@@ -3,7 +3,7 @@ package com.myproject.datastructures.arrays;
 public class MaxNo {
 
     public static int calculation(int[] arr){
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             if (max < arr[i]) {
                 max = arr[i];

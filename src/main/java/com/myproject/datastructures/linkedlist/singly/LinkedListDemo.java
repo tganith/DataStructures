@@ -1,6 +1,5 @@
 package com.myproject.datastructures.linkedlist.singly;
 
-import com.myproject.datastructures.linkedlist.singly.LinkedList;
 
 public class LinkedListDemo {
 
